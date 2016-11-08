@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		C8ABFD7D1DBF35D2003EA6AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABFD7C1DBF35D2003EA6AE /* AppDelegate.swift */; };
 		C8ABFD821DBF35D2003EA6AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ABFD801DBF35D2003EA6AE /* Main.storyboard */; };
-		C8ABFD841DBF35D2003EA6AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ABFD831DBF35D2003EA6AE /* Assets.xcassets */; };
 		C8ABFD871DBF35D2003EA6AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ABFD851DBF35D2003EA6AE /* LaunchScreen.storyboard */; };
 		C8ABFD921DBF35D2003EA6AE /* OurBabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABFD911DBF35D2003EA6AE /* OurBabTests.swift */; };
 		C8ABFD9D1DBF35D2003EA6AE /* OurBabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABFD9C1DBF35D2003EA6AE /* OurBabUITests.swift */; };
 		C8ABFDAB1DBF3928003EA6AE /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABFDAA1DBF3928003EA6AE /* RestaurantTableViewController.swift */; };
+		C8DDA0B21DCF54690035D558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DDA0B11DCF54690035D558 /* Assets.xcassets */; };
 		C8FC6E761DCD81E3007FAEB0 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC6E751DCD81E3007FAEB0 /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,6 @@
 		C8ABFD791DBF35D2003EA6AE /* OurBab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurBab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ABFD7C1DBF35D2003EA6AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8ABFD811DBF35D2003EA6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8ABFD831DBF35D2003EA6AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8ABFD861DBF35D2003EA6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8ABFD881DBF35D2003EA6AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ABFD8D1DBF35D2003EA6AE /* OurBabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OurBabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +47,7 @@
 		C8ABFD9C1DBF35D2003EA6AE /* OurBabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurBabUITests.swift; sourceTree = "<group>"; };
 		C8ABFD9E1DBF35D2003EA6AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ABFDAA1DBF3928003EA6AE /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		C8DDA0B11DCF54690035D558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		C8FC6E751DCD81E3007FAEB0 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,8 +103,8 @@
 				C8ABFD801DBF35D2003EA6AE /* Main.storyboard */,
 				C8ABFDAA1DBF3928003EA6AE /* RestaurantTableViewController.swift */,
 				C8FC6E751DCD81E3007FAEB0 /* RestaurantTableViewCell.swift */,
-				C8ABFD831DBF35D2003EA6AE /* Assets.xcassets */,
 				C8ABFD851DBF35D2003EA6AE /* LaunchScreen.storyboard */,
+				C8DDA0B11DCF54690035D558 /* Assets.xcassets */,
 				C8ABFD881DBF35D2003EA6AE /* Info.plist */,
 			);
 			path = OurBab;
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8ABFD871DBF35D2003EA6AE /* LaunchScreen.storyboard in Resources */,
-				C8ABFD841DBF35D2003EA6AE /* Assets.xcassets in Resources */,
+				C8DDA0B21DCF54690035D558 /* Assets.xcassets in Resources */,
 				C8ABFD821DBF35D2003EA6AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
