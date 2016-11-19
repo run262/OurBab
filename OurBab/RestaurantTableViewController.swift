@@ -14,8 +14,8 @@ class RestaurantTableViewController: UITableViewController {
     var restaurants:[Restaurant] = [
         Restaurant(name: "Seo Galbi", type: "BBQ", location: "Seoul", image: "seogalbi.jpg", isVisited: false),
         Restaurant(name: "OB Bear", type: "Bar", location: "Seoul", image: "obbear.jpg", isVisited: false),
-        Restaurant(name: "Teakha", type: "Tea House", location: "Hong Kong", image: "teakha.jpg", isVisited: false),
-        Restaurant(name: "Cafe loisl", type: "Austrian / Causual Drink", location: "Hong Kong", image: "cafeloisl.jpg", isVisited: false),
+        Restaurant(name:"Weonjo Son Kalguksu",type:"Noodle",location:"Seoul",image:"sonkalguksu.jpg",isVisited:false),
+        Restaurant(name:"Geuyetnal Jjajang",type:"Noodle",location:"Seoul",image:"udon.jpg",isVisited:false),
         Restaurant(name: "Petite Oyster", type: "French", location: "Hong Kong", image: "petiteoyster.jpg", isVisited: false),
         Restaurant(name: "For Kee Restaurant", type: "Bakery", location: "Hong Kong", image: "forkeerestaurant.jpg", isVisited: false),
         Restaurant(name: "Po's Atelier", type: "Bakery", location: "Hong Kong", image: "posatelier.jpg", isVisited: false),
