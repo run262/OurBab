@@ -25,8 +25,19 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
+        title = restaurant.name // show title
+        
+        navigationController?.hidesBarsOnSwipe = false
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,12 +64,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
         case 3:
+            cell.fieldLabel.text = "Phone"
+            cell.valueLabel.text = restaurant.phone
+        case 4:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
         default:
             cell.fieldLabel.text = ""
-            cell.valueLabel.text = "" }
-        
+            cell.valueLabel.text = ""
+        }
         cell.backgroundColor = UIColor.clear
         
         return cell
