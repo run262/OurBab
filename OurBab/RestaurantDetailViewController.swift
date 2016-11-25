@@ -50,7 +50,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4 }
+        return 5 }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -72,7 +72,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -83,15 +83,24 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
     }
     
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            
+            restaurant.isVisited = true
+            
+            switch rating {
+            case "great": restaurant.rating = "Absolutely love it! Must try."
+            case "good": restaurant.rating = "Pretty good."
+            case "dislike": restaurant.rating = "I don't like it."
+            default: break
+            }
+        }
+        
+        tableView.reloadData()
+    }
 }
+
