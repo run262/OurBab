@@ -12,12 +12,12 @@ class RestaurantTableViewController: UITableViewController {
     
     
     var restaurants:[Restaurant] = [
-        Restaurant(name:"Seo Galbi",type:"BBQ",location:"Seoul",phone:"02-716-2520",image:"seogalbi.jpg",isVisited:false),
-        Restaurant(name:"Busan Galmegi",type:"Seafood",location:"Seoul",phone:"02-773-8146",image:"galmegi.jpg",isVisited:false),
-        Restaurant(name:"OB Bear",type:"Bar",location:"Seoul",phone:"02-2264-1597",image:"obbear.jpg",isVisited:false),
-        Restaurant(name:"Weonjo Son Kalguksu",type:"Noodle",location:"Seoul",phone:"02-923-0681",image:"sonkalguksu.jpg",isVisited:false),
-        Restaurant(name:"Geuyetnal Jjajang",type:"Noodle",location:"Seoul",phone:"02-919-9804",image:"udon.jpg",isVisited:false),
-        Restaurant(name:"Songbok",type:"Japanese",location:"Seoul",phone:"02-545-9657",image:"songbok.jpg",isVisited:false),
+        Restaurant(name:"Seo Galbi",type:"BBQ",location:"32 Baekbumro 2-gil, Mapo-gu, Seoul, South Korea",phone:"02-716-2520",image:"seogalbi.jpg",isVisited:false),
+        Restaurant(name:"Busan Galmegi",type:"Seafood",location:"25-20 Namdaemunro, Jung-gu, Seoul, South Korea",phone:"02-773-8146",image:"galmegi.jpg",isVisited:false),
+        Restaurant(name:"OB Bear",type:"Bar",location:"19 Euljiro 13-gil, Jung-gu, Seoul, South Korea",phone:"02-2264-1597",image:"obbear.jpg",isVisited:false),
+        Restaurant(name:"Weonjo Son Kalguksu",type:"Noodle",location:"113 Jongamro, Seongbuk-gu, Seoul, South Korea",phone:"02-923-0681",image:"sonkalguksu.jpg",isVisited:false),
+        Restaurant(name:"Geuyetnal Jjajang",type:"Noodle",location:"49 Gosanjaro 60-gil, Dongdaemun-gu, Seoul, South Korea",phone:"02-919-9804",image:"udon.jpg",isVisited:false),
+        Restaurant(name:"Songbok",type:"Japanese",location:"14 Samseongro 133-gil, Gangnam-gu, Seoul, South Korea",phone:"02-545-9657",image:"songbok.jpg",isVisited:false),
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", phone: "348-233423", image: "homei.jpg", isVisited: false),
         Restaurant(name: "Teakha", type: "Tea House", location: "Shop B, 18 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong", phone: "354-243523", image: "teakha.jpg", isVisited: false),

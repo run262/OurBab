@@ -114,6 +114,10 @@
                                     <rect key="frame" x="0.0" y="64" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
+                                <mapView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" id="bJN-ax-N5D">
+                                    <rect key="frame" x="0.0" y="428" width="375" height="135"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </mapView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="DDI-xJ-J1C" customClass="RestaurantDetailTableViewCell" customModule="OurBab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="375" height="36"/>
@@ -185,13 +189,47 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="bJN-ax-N5D" id="Mrk-JP-wDr"/>
                         <outlet property="restaurantImageView" destination="7eb-I0-aRg" id="i8h-LY-I7h"/>
                         <outlet property="tableView" destination="YUg-9X-0rN" id="dpE-zx-gWc"/>
+                        <segue destination="Qgo-ju-WI4" kind="show" identifier="showMap" id="31J-ZK-Nc3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMv-uV-QwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1733.5999999999999" y="-36.431784107946029"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="TU1-eK-9Ae">
+            <objects>
+                <viewController id="Qgo-ju-WI4" customClass="MapViewController" customModule="OurBab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xey-Ij-Mdu"/>
+                        <viewControllerLayoutGuide type="bottom" id="w5L-Rj-BuV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jEU-Ms-eti">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PWT-oU-k85">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PWT-oU-k85" firstAttribute="top" secondItem="jEU-Ms-eti" secondAttribute="top" id="5cy-Ap-cad"/>
+                            <constraint firstItem="w5L-Rj-BuV" firstAttribute="top" secondItem="PWT-oU-k85" secondAttribute="bottom" id="9yr-hr-CXb"/>
+                            <constraint firstAttribute="trailing" secondItem="PWT-oU-k85" secondAttribute="trailing" id="Cya-Y6-nAo"/>
+                            <constraint firstItem="PWT-oU-k85" firstAttribute="leading" secondItem="jEU-Ms-eti" secondAttribute="leading" id="VG9-rZ-g0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="PWT-oU-k85" id="df9-xB-7rX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xrd-Yb-cJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="665"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="QJX-AG-umk">
@@ -225,10 +263,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F1m-lB-lYS">
-                                        <rect key="frame" x="8" y="292" width="253" height="123"/>
+                                        <rect key="frame" x="8" y="292" width="253" height="122"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIA-Di-JNX">
-                                                <rect key="frame" x="0.0" y="0.0" width="253" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="37"/>
                                                 <color key="backgroundColor" red="0.85490196080000003" green="0.3921568627" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <state key="normal" title="Absolutely love it!">
@@ -239,7 +277,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0M-3f-fTf">
-                                                <rect key="frame" x="0.0" y="42.5" width="253" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="42" width="253" height="38"/>
                                                 <color key="backgroundColor" red="0.85490196080000003" green="0.3921568627" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <state key="normal" title="Good">
@@ -250,7 +288,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-EJ-lDS">
-                                                <rect key="frame" x="0.0" y="85" width="253" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="85" width="253" height="37"/>
                                                 <color key="backgroundColor" red="0.85490196080000003" green="0.3921568627" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <state key="normal" title="I don't like it">
