@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,10 +16,13 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var typeTextField:UITextField!
     @IBOutlet var locationTextField:UITextField!
+    @IBOutlet var phoneTextField:UITextField!
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
     var isVisited = true
+    
+    var restaurant:RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +87,28 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         print("Name: \(nameTextField.text)")
         print("Type: \(typeTextField.text)")
         print("Location: \(locationTextField.text)")
+        print("Phone: \(phoneTextField.text)")
         print("Have you been here: \(isVisited)")
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = locationTextField.text
+            restaurant.phone = phoneTextField.text
+            restaurant.isVisited = isVisited
+            
+            if let restaurantImage = photoImageView.image {
+                if let imageData = UIImagePNGRepresentation(restaurantImage) {
+                    restaurant.image = NSData(data: imageData)
+                }
+            }
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
+            
+        }
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -109,6 +134,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
         }
     }
+    
     
     /*
      // MARK: - Navigation

@@ -15,17 +15,18 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var tableView:UITableView!
     @IBOutlet var mapView: MKMapView!
     
-    var restaurant:Restaurant!
-    
+    var restaurant:RestaurantMO!
+    //    var restaurant:Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image as! Data)
+        //        restaurantImageView.image = UIImage(named: restaurant.image)
         
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
-//      tableView.tableFooterView = UIView(frame: CGRect.zero)   delete to show footer
+        
         title = restaurant.name // show title
         
         navigationController?.hidesBarsOnSwipe = false
@@ -41,7 +42,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Pin the restaurant location on map
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: { placemarks, error in
+            //        geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
             if error != nil {
                 print(error)
                 return
@@ -68,7 +70,6 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         })
     }
     
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -83,9 +84,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
+    
     func showMap() {
         performSegue(withIdentifier: "showMap", sender: self)
     }
+    
+    // MARK: - UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -95,7 +99,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantDetailTableViewCell
         
-        // Configure the cell... 
+        // Configure the cell...
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -111,11 +115,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating!)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        // Ch18 don't forget optional !
+        
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -139,10 +145,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             }
         }
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            appDelegate.saveContext()
+        }
+        
+        
         tableView.reloadData()
+        
     }
-
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -157,4 +168,3 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
 }
-
